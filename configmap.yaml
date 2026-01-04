@@ -1,0 +1,21 @@
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: auth-configmap
+# data:
+#   MYSQL_HOST: MYSQL_HOST: host.minikube.internal
+#   MYSQL_USER: auth_user
+#   MYSQL_DB: auth_db
+#   MYSQL_PORT: "3306"
+#   MYSQL_PASSWORD: Sicu4dec18!
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auth-configmap
+data:
+  MYSQL_HOST: host.minikube.internal
+  MYSQL_PORT: "3306"
+  MYSQL_USER: root
+  MYSQL_DB: auth_db
+  MYSQL_PASSWORD: Sicu4dec18!

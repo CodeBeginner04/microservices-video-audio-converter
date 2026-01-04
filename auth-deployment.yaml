@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+        - name: auth
+          image: emma04/auth-service:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MYSQL_HOST
+              value: host.docker.internal
+            - name: MYSQL_PORT
+              value: "3306"
+            - name: MYSQL_USER
+              value: root
+            - name: MYSQL_PASSWORD
+              value: Sicu4dec18!
+            - name: MYSQL_DB
+              value: auth_db
